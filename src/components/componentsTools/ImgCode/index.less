@@ -1,0 +1,112 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-10-10 10:44:01
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-12-03 12:50:55
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.ImgCode_root {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    .image_container {
+        position: relative;
+        background-color: #ddd;
+    }
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* 提示信息 */
+    .tips_container,
+    .tips_container__active {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        transform: translate(-50%, -50%);
+        transition: all 0.25s;
+        background: #fff;
+        border-radius: 5px;
+        opacity: 0;
+    }
+
+    .tips_container__active {
+        visibility: visible;
+        opacity: 1;
+        .tips_text {
+            color: red;
+        }
+    }
+    .imgCode_change {
+        position: absolute;
+        right: 10px;
+        text-align: left;
+        color: #ddd;
+        opacity: 0.9;
+        padding: 10px;
+        &:hover {
+            cursor: pointer;
+            color: royalblue;
+            opacity: 1;
+        }
+    }
+    .imgCode_slider {
+        position: relative;
+        margin: 10px 0;
+        .slider_bar {
+            padding: 5px;
+            font-size: 14px;
+            text-align: center;
+            color: #999;
+            background-color: #ddd;
+        }
+        .slider_icon,
+        .slider_track {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: #fff center/80% 80% no-repeat;
+            box-shadow: 0 2px 10px 0 #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider_icon {
+            border-radius: 50px;
+        }
+        .slider_track {
+            background-color: #91d5ff;
+            border: 1px solid #9291ee;
+        }
+        .slider_icon_move {
+            background-color: #1d9ceb;
+        }
+        .slider_track_ok {
+            background-color: #229e22;
+            border: 1px solid #0ec70e;
+        }
+        .slider_icon_ok {
+            background-color: #229e22;
+        }
+        .slider_track_error {
+            background-color: #df3644;
+            border: 1px solid #e20b1d;
+        }
+        .slider_icon_error {
+            background-color: #df3644;
+        }
+    }
+}

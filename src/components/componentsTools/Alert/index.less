@@ -1,0 +1,351 @@
+@success-color: #a5dc86;
+@warning-color: #f8bb86;
+:global {
+    .alert_overlay {
+        position: fixed;
+        background: rgba(0, 0, 0, 0.36);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .alert_overlay-show {
+        opacity: 1;
+        pointer-events: auto;
+        .alert_modal {
+            opacity: 1;
+            pointer-events: auto;
+            animation: showAlert 0.3s;
+        }
+    }
+    .alert_modal {
+        width: 340px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 4px;
+        background-color: #ffffff;
+        opacity: 0;
+        z-index: 10001;
+        transition: opacity 0.2s;
+        pointer-events: none;
+        box-sizing: border-box;
+        padding: 36px 0 30px 0;
+    }
+    .alert_title {
+        margin-top: 24px;
+        margin-bottom: 40px;
+        line-height: 1;
+        font-size: 18px;
+        color: #262632;
+        font-weight: bold;
+        z-index: 2;
+        padding: 0 25px;
+    }
+    .alert_text {
+        margin-top: -40px;
+        line-height: 1;
+        font-size: 13px;
+        color: #4c4c4c;
+        z-index: 2;
+        min-height: 60px;
+        max-height: 200px;
+        overflow: auto;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+    .alert_icon {
+        width: 80px;
+        height: 80px;
+        border-width: 4px;
+        border-style: solid;
+        border-radius: 50%;
+        padding: 0;
+        position: relative;
+        box-sizing: content-box;
+    }
+    .alert_icon-success {
+        border-color: @success-color;
+        &::before,
+        &::after {
+            content: '';
+            border-radius: 50%;
+            position: absolute;
+            width: 60px;
+            height: 120px;
+            background: #fff;
+            transform: rotate(45deg);
+        }
+        &::before {
+            border-radius: 120px 0 0 120px;
+            top: -7px;
+            left: -33px;
+            transform: rotate(-45deg);
+            transform-origin: 60px 60px;
+        }
+        &::after {
+            border-radius: 0 120px 120px 0;
+            top: -11px;
+            left: 30px;
+            transform: rotate(-45deg);
+            transform-origin: 0 60px;
+            animation: rotatePlaceholder 4.25s ease-in;
+        }
+    }
+    .alert_icon-success_line {
+        height: 5px;
+        background-color: @success-color;
+        display: block;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 2;
+    }
+    .alert_icon-success_line-long {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+        transform: rotate(-45deg);
+        animation: animateSuccessLong 0.75s;
+    }
+    .alert_icon-success_line-tip {
+        width: 25px;
+        left: 14px;
+        top: 46px;
+        transform: rotate(45deg);
+        animation: animateSuccessTip 0.75s;
+    }
+    .alert_icon-success_ring {
+        width: 80px;
+        height: 80px;
+        border: 4px solid fade(@success-color, 20%);
+        border-radius: 50%;
+        box-sizing: content-box;
+        position: absolute;
+        left: -4px;
+        top: -4px;
+        z-index: 2;
+    }
+    .alert_icon-success_hide-corners {
+        width: 5px;
+        height: 90px;
+        background-color: #fff;
+        padding: 1px;
+        position: absolute;
+        left: 28px;
+        top: 8px;
+        z-index: 1;
+        transform: rotate(-45deg);
+    }
+    // warning
+    .alert_icon-warning {
+        border-color: @warning-color;
+        animation: pulseWarning 0.75s infinite alternate;
+    }
+    .alert_icon-warning_body,
+    .alert_icon-warning_dot {
+        position: absolute;
+        left: 50%;
+        background-color: @warning-color;
+    }
+    .alert_icon-warning_body {
+        width: 5px;
+        height: 47px;
+        top: 10px;
+        border-radius: 2px;
+        margin-left: -2px;
+    }
+    .alert_icon-warning_dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-left: -4px;
+        bottom: -11px;
+    }
+    .alert_icon-error {
+        border-color: #f27474;
+        animation: animateErrorIcon 0.5s;
+    }
+    .alert_icon-error_mark {
+        position: relative;
+        display: block;
+        animation: animateXMark 0.5s;
+    }
+    .alert_icon-error_line {
+        position: absolute;
+        height: 5px;
+        width: 47px;
+        background-color: #f27474;
+        display: block;
+        top: 37px;
+        border-radius: 2px;
+    }
+    .alert_icon-error_line-left {
+        transform: rotate(45deg);
+        left: 17px;
+    }
+    .alert_icon-error_line-right {
+        transform: rotate(-45deg);
+        right: 16px;
+    }
+    .alert_button_container {
+        padding: 0 50px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .alert_button {
+        width: 112px;
+        height: 32px;
+        font-size: 13px;
+        border: 1px solid #d0d0d0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .alert_button-confirm {
+        .alert_button;
+        width: 74px;
+    }
+    @keyframes rotatePlaceholder {
+        0% {
+            transform: rotate(-45deg);
+        }
+
+        5% {
+            transform: rotate(-45deg);
+        }
+
+        12% {
+            transform: rotate(-405deg);
+        }
+
+        to {
+            transform: rotate(-405deg);
+        }
+    }
+    @keyframes showAlert {
+        0% {
+            transform: scale(1);
+        }
+        1% {
+            transform: scale(0.5);
+        }
+        45% {
+            transform: scale(1.05);
+        }
+        80% {
+            transform: scale(0.95);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    @keyframes animateSuccessLong {
+        0% {
+            width: 0;
+            right: 46px;
+            top: 54px;
+        }
+
+        65% {
+            width: 0;
+            right: 46px;
+            top: 54px;
+        }
+
+        84% {
+            width: 55px;
+            right: 0;
+            top: 35px;
+        }
+
+        to {
+            width: 47px;
+            right: 8px;
+            top: 38px;
+        }
+    }
+    @keyframes animateSuccessTip {
+        0% {
+            width: 0;
+            left: 1px;
+            top: 19px;
+        }
+
+        54% {
+            width: 0;
+            left: 1px;
+            top: 19px;
+        }
+
+        70% {
+            width: 50px;
+            left: -8px;
+            top: 37px;
+        }
+
+        84% {
+            width: 17px;
+            left: 21px;
+            top: 48px;
+        }
+
+        to {
+            width: 25px;
+            left: 14px;
+            top: 45px;
+        }
+    }
+    @keyframes pulseWarning {
+        0% {
+            border-color: #f8d486;
+        }
+
+        to {
+            border-color: #f8bb86;
+        }
+    }
+    @keyframes animateErrorIcon {
+        0% {
+            transform: rotateX(100deg);
+            opacity: 0;
+        }
+
+        to {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+    }
+    @keyframes animateXMark {
+        0% {
+            transform: scale(0.4);
+            margin-top: 26px;
+            opacity: 0;
+        }
+
+        50% {
+            transform: scale(0.4);
+            margin-top: 26px;
+            opacity: 0;
+        }
+
+        80% {
+            transform: scale(1.15);
+            margin-top: -6px;
+        }
+
+        to {
+            transform: scale(1);
+            margin-top: 0;
+            opacity: 1;
+        }
+    }
+}

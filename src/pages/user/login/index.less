@@ -1,0 +1,28 @@
+@import '~antd/es/style/themes/default.less';
+
+.main {
+  border-radius: 80px;
+  width: 400px;
+  height: 400px;
+  padding: 35px;
+  background-color: #fff;
+  margin: 100px auto;
+  box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
+    0 5px 12px 4px rgba(0, 0, 0, 0.09);
+  @media screen and (max-width: @screen-sm) {
+    width: 95%;
+    max-width: 328px;
+  }
+  .form {
+    :global {
+      .form__item {
+        border: none !important;
+      }
+    }
+  }
+  .btn {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+}

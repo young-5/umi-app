@@ -1,0 +1,45 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-11-09 13:07:30
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-11-10 10:20:59
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.root {
+    position: relative;
+    padding: 10px;
+    .card_list {
+        display: flex;
+        flex-wrap: wrap;
+        .list {
+            width: 32%;
+            margin-top: 15px;
+            &:hover {
+                box-shadow: 0 0 10px 5px #eee;
+            }
+        }
+        .list:not(:nth-child(2n)) {
+            margin-right: calc(4% / 3);
+        }
+        .list:not(:nth-child(2n + 1)) {
+            margin-right: calc(4% / 3);
+        }
+    }
+    .card_page {
+        padding: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+.table {
+    padding: 10px;
+    :global {
+        .ant-table {
+            border: 1px solid #eee;
+        }
+    }
+}

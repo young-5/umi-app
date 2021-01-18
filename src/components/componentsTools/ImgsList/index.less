@@ -1,0 +1,57 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-10-26 16:30:19
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-11-27 14:25:43
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-10-26 16:09:25
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-10-26 16:27:21
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.Imglist_root {
+    .box1 {
+        height: 200px;
+        background-color: yellow;
+    }
+    .box2 {
+        height: 200px;
+        background-color: blue;
+    }
+    .box3 {
+        height: 200px;
+        background-color: red;
+    }
+    :global {
+        .slick-track {
+            width: auto !important;
+        }
+        .slick-prev {
+            left: 0.5%;
+            z-index: 99999;
+        }
+        .slick-next {
+            right: 0.5%;
+            z-index: 99999;
+        }
+        .slick-prev:before,
+        .slick-next:before {
+            color: #000 !important;
+        }
+        .slick-slide {
+            padding: 10px;
+            width: 200px !important;
+        }
+    }
+}

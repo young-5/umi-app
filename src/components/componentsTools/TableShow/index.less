@@ -1,0 +1,40 @@
+/*
+ * File: index.less
+ * Description: 左右表格显示组件样式
+ * File Created: 2020-11-10 15:13:04
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-11-27 09:51:46
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.noDataRow {
+    border-right: 0 !important;
+    background-color: #fafafa;
+}
+.descriptions_root {
+    :global {
+        table {
+            // table表格样式
+            .ant-descriptions-row {
+                background-color: #f6f8fd !important;
+                th,
+                td {
+                    background-color: #f6f8fd !important;
+                }
+            }
+
+            .ant-descriptions-row:nth-child(even) {
+                background-color: #fff !important;
+                th,
+                td {
+                    background-color: #fff !important;
+                }
+            }
+        }
+        .ant-descriptions-item-label {
+            width: 20%;
+        }
+    }
+}

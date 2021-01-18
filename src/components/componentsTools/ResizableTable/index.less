@@ -1,0 +1,31 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-09-24 09:52:13
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-09-24 10:05:05
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.resizableTable {
+    :global {
+        .ant-table-thead > tr > th {
+            position: relative;
+        }
+        .ant-table-bordered .ant-table-tbody > tr > td {
+            border-right-color: transparent;
+        }
+    }
+}
+
+.resizeBorder {
+    width: 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -4px;
+    cursor: col-resize;
+    transform: none !important;
+}

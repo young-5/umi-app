@@ -1,0 +1,21 @@
+:global {
+    .Ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .Ellipsis_clamp {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

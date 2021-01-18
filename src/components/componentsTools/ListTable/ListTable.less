@@ -1,0 +1,40 @@
+/*
+ * File: ListTable.less
+ * Description: 描述
+ * File Created: 2020-11-24 19:01:13
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-11-24 19:28:02
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+.list_root {
+    .list_row {
+        background-color: #fff;
+        width: 100%;
+        .list_col {
+            display: flex;
+            .list_col_label {
+                display: block;
+                width: 30%;
+                text-align: right;
+                padding-right: 10px;
+                line-height: 50px;
+            }
+            .list_col_value {
+                width: 70%;
+                display: block;
+                padding-left: 10px;
+                line-height: 50px;
+            }
+            span {
+                box-shadow: 1px 0 0 0 #eee, 0 1px 0 0 #eee, 1px 1px 0 0 #eee,
+                    /* 修复没有角 */ 1px 0 0 0 #eee inset, 0 1px 0 0 #eee inset;
+            }
+        }
+    }
+    .list_row2n {
+        background-color: #f2f6fa;
+    }
+}

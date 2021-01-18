@@ -1,0 +1,110 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2020-11-04 15:22:22
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2020-11-10 14:29:44
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2020 - Present, Your Company
+ */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    .title {
+        font-weight: 700;
+        background-color: #eee;
+        padding: 10px;
+        span:first-child {
+            margin-right: 5px;
+        }
+    }
+    .inf {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        padding-bottom: 10px;
+        .inf__item {
+            width: 50%;
+            padding: 10px 0;
+            padding-bottom: 10px;
+            span:first-child {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.infCard {
+    .infCard__title {
+        padding: 10px;
+        background: #eee;
+        span {
+            padding-right: 10px;
+        }
+    }
+    .infCard__imgs {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .infCard__img_item {
+            width: 23%;
+            height: 200px;
+            img {
+                width: 100%;
+                height: 85%;
+            }
+            div {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    .infCard__card {
+        border-left: 3px solid blue;
+        padding-left: 5px;
+        font-weight: 500;
+        margin: 10px 0;
+    }
+    .time_card {
+        display: flex;
+        align-items: center;
+        background: #eee;
+        padding: 10px;
+        width: auto;
+        position: relative;
+        border-radius: 5px;
+        .time_card_arrow {
+            position: absolute;
+            display: block;
+            width: 8.48528137px;
+            height: 8.48528137px;
+            background: #eee;
+            border-style: solid;
+            border-width: 4.24264069px;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            left: -5px;
+            top: 50%;
+            border-color: #eee;
+        }
+        .time_card_img {
+            width: 30%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .time_card_inf {
+            div {
+                span {
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

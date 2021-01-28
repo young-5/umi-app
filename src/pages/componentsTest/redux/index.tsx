@@ -63,16 +63,15 @@ const UseTaoism1 = () => {
       <div>
         <div> name {name}</div>
 
-        <Button onClick={() => setTaoism('name', 'yezihaohao')}>获取名字</Button>
+        <Button onClick={() => setTaoism('name', 'yang5')}>获取名字</Button>
       </div>
     </>
   );
 };
 
 const Another = () => {
-  let [name] = useTaoism('name', { light: true });
-  console.log(name);
-  return <div>{name ? `有点酷：${name}` : null}</div>;
+  let [userName] = useTaoism('userName', { light: true });
+  return <div>{userName ? `登录全局用户名：${userName}` : null}</div>;
 };
 
 const TestUseTaoism = () => {

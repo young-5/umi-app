@@ -6,7 +6,7 @@ const Auth = () => {
     <div>
       <Title title="权限控制">
         <AuthPermit require={['1']}>
-          <div>有‘1’ 显示我</div>
+          <div>登录后 有权限'1' 显示我 </div>
         </AuthPermit>
       </Title>
     </div>

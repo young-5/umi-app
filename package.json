@@ -12,7 +12,7 @@
     "antd": "^4.9.3",
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
-    "echarts": "^5.0.0",
+    "echarts": "^4.9.0",
     "echarts-for-react": "^2.0.16",
     "html2canvas": "^1.0.0-rc.7",
     "lodash": "^4.17.20",

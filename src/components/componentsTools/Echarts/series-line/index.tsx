@@ -27,6 +27,7 @@ const SeriesLine: React.FC<ISeriesLineProps> = props => {
     isZoom = true,
     isTools = false,
   } = props;
+  //数据处理
   const getAxisData = () => {
     let x: any[] = [];
     let y: any[] = [];

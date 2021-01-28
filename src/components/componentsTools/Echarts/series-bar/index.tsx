@@ -5,45 +5,53 @@ import React from 'react';
 import EchartsReact from 'echarts-for-react';
 
 interface ISeriesBarProps {
+  series?: any;
+  legend?: any;
   [key: string]: any;
 }
 
 const SeriesBar: React.FC<ISeriesBarProps> = props => {
   const {
-    color = ['#215FF9'],
+    color = ['#215FF9', '#2100F9'],
     files = {
       x: 'x',
-      y: 'y',
+      y: ['y'],
     },
-    xAxisData = [
-      '1月',
-      '2月',
-      '3月',
-      '4月',
-      '5月',
-      '6月',
-      '7月',
-      '8月',
-      '9月',
-      '10月',
-      '11月',
-      '12月',
-    ],
-    yAxisData = [120, 200, 150, 800, 70, 110, 1300, 120, 2000, 150, 80, 70],
+    xAxisData,
+    yAxisData,
     dataSource,
+    legend,
+    series,
   } = props;
+
   const getAxisData = () => {
-    let x: any = [];
-    let y: any = [];
-    dataSource.forEach((data: any) => {
+    let x: any[] = [];
+    let y: any[] = [];
+    dataSource?.forEach((data: any) => {
       x.push(data[files.x]);
-      y.push(data[files.y]);
+      files?.y?.forEach((v: any, i: number) => {
+        if (y[i]) {
+          y[i].push(data[v]);
+        } else {
+          y[i] = [data[v]];
+        }
+      });
     });
     return {
       x,
       y,
     };
   };
+  const _y = getAxisData().y;
+  const _series = series?.map((v: any, i: number) => {
+    return {
+      data: yAxisData ? yAxisData[i] : _y[i],
+      type: 'bar',
+      barWidth: '20%',
+      color: color[i],
+      ...v,
+    };
+  });
   const _option = {
     color: color,
     tooltip: {
@@ -59,6 +67,9 @@ const SeriesBar: React.FC<ISeriesBarProps> = props => {
       bottom: '3%',
       containLabel: true,
     },
+    legend: {
+      data: legend,
+    },
     xAxis: [
       {
         type: 'category',
@@ -73,14 +84,7 @@ const SeriesBar: React.FC<ISeriesBarProps> = props => {
         type: 'value',
       },
     ],
-    series: [
-      {
-        name: '数量',
-        type: 'bar',
-        barWidth: '60%',
-        data: yAxisData || getAxisData()?.y,
-      },
-    ],
+    series: _series,
   };
   return (
     <div>

@@ -12,11 +12,10 @@ const Login: React.FC<{}> = () => {
 
   const _login = () => {
     //获取用户信息
-    setTaoism('userName', 'yang5');
-
+    setTaoism('userName', 'yang5登录成功');
     //获取权限
     setTaoism('permits', ['1', '2']);
-
+    alert('登录成功 拥有1 2 的权限');
     router.push('/');
     permits;
   };

@@ -4,12 +4,23 @@
  * File Created: 2020-12-16 13:20:54
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-12 10:19:26
+ * Last Modified: 2021-01-28 15:58:20
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
  */
 export default [
+  {
+    path: '/login',
+    component: '../layouts/BaseLayout',
+    routes: [
+      {
+        name: '登录',
+        path: '/login',
+        component: './user/login',
+      },
+    ],
+  },
   {
     path: '/',
     component: '../layouts/BasicLayout',
@@ -85,20 +96,9 @@ export default [
       //     },
       // ],
       // },
-      {
-        path: '/login',
-        component: '../layouts/BaseLayout',
-        routes: [
-          {
-            name: '登录',
-            path: '/login',
-            component: './user/login',
-          },
-        ],
-      },
-      {
-        component: '404',
-      },
     ],
+  },
+  {
+    component: '404',
   },
 ];

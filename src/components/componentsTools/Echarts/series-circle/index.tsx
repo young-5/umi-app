@@ -4,7 +4,7 @@
 
 import { Card } from 'antd';
 import ReactEcharts from 'echarts-for-react';
-import * as echarts from 'echarts';
+import echarts from 'echarts';
 import React, { useEffect, useRef, useState } from 'react';
 
 interface EchartsPieProps {
@@ -52,7 +52,7 @@ const EchartsPie: React.FC<EchartsPieProps> = props => {
     return count;
   };
 
-  //数据装换
+  //数据转换
   const dataFilter = () => {
     let _data = [];
     _data =

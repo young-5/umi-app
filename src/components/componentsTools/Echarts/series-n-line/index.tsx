@@ -4,7 +4,7 @@
  * File Created: 2020-12-01 10:41:06
  * Author: yangwenwu
  * ------
- * Last Modified: 2020-12-16 17:50:03
+ * Last Modified: 2021-01-28 14:33:15
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -13,7 +13,13 @@
 import React from 'react';
 import EchartsReact from 'echarts-for-react';
 interface ISeriesLineProps {
-  [key: string]: any;
+  legend?: string[];
+  series?: any[];
+  color?: any[];
+  xAxisData?: any[];
+  yAxisData?: any[][];
+  dataSource?: any;
+  files?: any;
 }
 
 const SeriesLine: React.FC<ISeriesLineProps> = props => {
@@ -23,22 +29,10 @@ const SeriesLine: React.FC<ISeriesLineProps> = props => {
       x: 'x',
       y: 'y',
     },
-    xAxisData = [
-      '1月',
-      '2月',
-      '3月',
-      '4月',
-      '5月',
-      '6月',
-      '7月',
-      '8月',
-      '9月',
-      '10月',
-      '11月',
-      '12月',
-    ],
-    yAxisData = [120, 200, 150, 800, 70, 110, 1300, 120, 2000, 150, 80, 70],
-    yAxisData2 = [12, 220, 15, 80, 170, 10, 20, 120, 200, 250, 180, 70],
+    xAxisData,
+    yAxisData,
+    legend = ['目前评分', '平均分'],
+    series,
     dataSource,
   } = props;
   const getAxisData = () => {
@@ -46,13 +40,29 @@ const SeriesLine: React.FC<ISeriesLineProps> = props => {
     let y: any[] = [];
     dataSource.forEach((data: any) => {
       x.push(data[files.x]);
-      y.push(data[files.y]);
+      files?.y?.forEach((v: any, i: number) => {
+        if (y[i]) {
+          y[i].push(data[v]);
+        } else {
+          y[i] = [data[v]];
+        }
+      });
     });
     return {
       x,
       y,
     };
   };
+  const _y = getAxisData().y;
+  const _series = series?.map((v, i) => {
+    return {
+      data: yAxisData ? yAxisData[i] : _y[i],
+      type: 'line',
+      color: color[i],
+      smooth: false,
+      ...v,
+    };
+  });
   const _option = {
     tooltip: {
       trigger: 'axis',
@@ -64,7 +74,7 @@ const SeriesLine: React.FC<ISeriesLineProps> = props => {
       containLabel: true,
     },
     legend: {
-      data: ['目前评分', '平均分'],
+      data: legend,
     },
     xAxis: {
       type: 'category',
@@ -84,22 +94,7 @@ const SeriesLine: React.FC<ISeriesLineProps> = props => {
         saveAsImage: {},
       },
     },
-    series: [
-      {
-        name: '目前评分',
-        data: yAxisData,
-        type: 'line',
-        color: color[0],
-        smooth: false,
-      },
-      {
-        name: '平均分',
-        data: yAxisData2,
-        type: 'line',
-        color: color[1],
-        smooth: false,
-      },
-    ],
+    series: _series,
   };
   return (
     <div>

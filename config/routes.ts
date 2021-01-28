@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:20:54
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-28 15:58:20
+ * Last Modified: 2021-01-28 16:13:45
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -48,7 +48,7 @@ export default [
         component: './componentsTest/redux',
       },
       {
-        name: '权限',
+        name: '权限验证',
         path: '/test/auth',
         component: './componentsTest/auth',
       },

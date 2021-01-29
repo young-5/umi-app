@@ -4,7 +4,7 @@
  * File Created: 2020-09-23 11:44:20
  * Author: yangwenwu
  * ------
- * Last Modified: 2020-12-16 15:27:28
+ * Last Modified: 2021-01-29 16:12:40
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -25,7 +25,6 @@ export { default as WithGridView } from './WithGridView';
 export { default as FormContainer } from './form-container';
 export { default as ListShow } from './ListShow';
 export { default as ListTable } from './ListTable/ListTable';
-export { default as Card } from './Card';
 export { default as ImgMap } from './ImgMap';
 export { default as ListCard } from './ListCard';
 export { default as ModalCustom } from './ModalCustom';
@@ -41,7 +40,6 @@ export { default as ChooseBtn } from './ChooseBtn';
 export { default as Download } from './Download';
 export { default as DownloadImg } from './DownloadImg';
 export { default as Print } from './Print';
-export { default as ImgCode } from './ImgCode';
 export { default as ImgsList } from './ImgsList';
 export { default as Timeline } from './Timeline';
 export { default as Btns } from './Btns';

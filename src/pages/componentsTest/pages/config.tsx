@@ -4,13 +4,14 @@
  * File Created: 2020-12-16 15:07:41
  * Author: yangwenwu
  * ------
- * Last Modified: 2020-12-25 08:48:58
+ * Last Modified: 2021-02-03 17:44:07
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
  */
 import React from 'react';
 import { Title, Spacer, TableBase } from '@/components/componentsTools';
+import FormSearch from './formSearch';
 
 export const tabList: any[] = [
   {
@@ -49,5 +50,10 @@ export const tabList: any[] = [
         ]}
       />
     ),
+  },
+  {
+    key: '4',
+    tab: '表单查询',
+    component: <FormSearch />,
   },
 ];

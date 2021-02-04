@@ -4,7 +4,7 @@
  * File Created: 2020-09-30 15:38:13
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-29 16:10:27
+ * Last Modified: 2021-02-04 10:01:09
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -55,6 +55,7 @@ export interface IBaseTableProps extends TableProps<any> {
   //展示状态
   modalType?: string | number;
   classNames?: string;
+  isCheck?: boolean;
 }
 const pageSizeOptions = ['20', '50', '100', '200'];
 const BaseTable = (props: IBaseTableProps, ref: any) => {
@@ -79,6 +80,7 @@ const BaseTable = (props: IBaseTableProps, ref: any) => {
     cardClassName,
     modalType = 'list',
     classNames,
+    isCheck = true,
     ...restProps
   } = props;
   const [dataSource, setDataSource] = useState<any[]>([]);
@@ -192,7 +194,7 @@ const BaseTable = (props: IBaseTableProps, ref: any) => {
       paginationData!.total / paginationData!.pageSize,
     )}页`;
   };
-
+  const changeColumns = () => {};
   const handlePageChange = (pageNumber: number, pageSize: number) => {
     onPageChangeFetch && fetchApiMemoized({ pageNumber, pageSize });
     onPageChange && onPageChange(pageNumber, pageSize);

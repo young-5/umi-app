@@ -4,7 +4,7 @@
  * File Created: 2020-09-23 11:44:20
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-29 16:12:40
+ * Last Modified: 2021-02-05 15:20:11
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -47,3 +47,4 @@ export { default as ToolsBtn } from './ToolsBtn/ToolBtn';
 export { default as Menu } from './Menu';
 export { default as AuthPool } from './auth-pool';
 export { default as AuthPermit } from './auth-permit';
+export { default as Transfer } from './Transfer';

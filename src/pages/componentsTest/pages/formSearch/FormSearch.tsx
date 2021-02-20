@@ -4,13 +4,14 @@
  * File Created: 2021-02-03 17:44:23
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-02-03 17:52:06
+ * Last Modified: 2021-02-20 11:02:59
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2021 - Present, Your Company
  */
 import React from 'react';
-import { FormContainer, TableBase } from '@/components/componentsTools';
+import { FormContainer } from '@/components/componentsTools';
+import { Table } from 'oi-ui';
 import { Form } from 'antd';
 interface NMGProps {}
 
@@ -44,7 +45,7 @@ const NMG: React.FC<NMGProps> = props => {
           },
         ]}
       />
-      <TableBase
+      <Table
         columns={[
           {
             title: '序号',

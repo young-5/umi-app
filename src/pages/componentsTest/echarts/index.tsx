@@ -4,13 +4,13 @@
  * File Created: 2020-12-16 17:33:22
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-28 14:49:47
+ * Last Modified: 2021-02-20 10:58:25
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
  */
 import React, { useEffect } from 'react';
-import { Title } from '@/components/componentsTools';
+import { Title } from 'oi-ui';
 import {
   SeriesCircle,
   SeriesLine,

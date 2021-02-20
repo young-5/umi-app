@@ -4,7 +4,7 @@
  * File Created: 2020-09-28 09:36:53
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-02-04 10:08:06
+ * Last Modified: 2021-02-20 11:33:24
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -14,7 +14,7 @@ import { Button, Form } from 'antd';
 import { FormProps } from 'antd/lib/form';
 import { FormInstance } from 'antd/lib/form/Form';
 import classNames from 'classnames';
-import ModalContainer from '../ModalContainer';
+import { ModalContainer } from 'oi-ui';
 import _ from 'lodash';
 import React, { ReactNode, useEffect, useImperativeHandle, useState, useRef } from 'react';
 import CheckFormItem from './CheckFormItem';

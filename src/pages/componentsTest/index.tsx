@@ -4,13 +4,13 @@
  * File Created: 2020-12-16 09:28:17
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-28 16:12:59
+ * Last Modified: 2021-02-20 14:28:59
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
  */
 import React, { useEffect } from 'react';
-import { Title } from '@/components/componentsTools';
+import { Title } from 'oi-ui';
 import request from '@/services/utils';
 
 const NMG = () => {

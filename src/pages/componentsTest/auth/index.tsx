@@ -1,6 +1,6 @@
 import React from 'react';
-import { AuthPermit, Title } from '@/components/componentsTools';
-
+import { AuthPermit } from '@/components/componentsTools';
+import { Title } from 'oi-ui';
 const Auth = () => {
   return (
     <div>

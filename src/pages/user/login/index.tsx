@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Tabs, Form } from 'antd';
 import router from 'umi/router';
-import { FormContainer, BtnMaterial } from '@/components/componentsTools';
+import { FormContainer } from '@/components/componentsTools';
+import { BtnMaterial } from 'oi-ui';
 import { useTaoism } from '@/components/componentsTools/redux-y5';
-import styles from './index.less';
+// import styles from './index.less';
 
 const Login: React.FC<{}> = () => {
   const [accountForm] = Form.useForm();

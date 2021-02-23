@@ -1,17 +1,39 @@
-@import '~antd/es/style/themes/default.less';
+// @import '~antd/es/style/themes/default.less';
 
 .main {
   border-radius: 80px;
   width: 400px;
   height: 400px;
   padding: 35px;
-  background-color: #fff;
+  background-color: #4c317a;
   margin: 100px auto;
   box-shadow: 0 1px 2px -2px rgba(26, 19, 19, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
-    0 5px 12px 4px rgba(0, 0, 0, 0.09);
-  @media screen and (max-width: @screen-sm) {
-    width: 95%;
-    max-width: 328px;
+    0 5px 12px 4px hsla(0, 0%, 0%, 0.09);
+  // @media screen and (max-width: @screen-sm) {
+  //   width: 95%;
+  //   max-width: 328px;
+  // }
+  animation-name: test2;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  position: relative;
+  .bg {
+    width: 100%;
+    height: 100%;
+    margin: -35px;
+    position: absolute;
+    background: linear-gradient(#6c39c7, #65f0ffbd);
+    animation: clipplay 2s infinite alternate linear;
+  }
+  &:hover {
+    animation-name: test2;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+  :hover {
+    animation-name: test2;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
   }
   .form {
     :global {
@@ -24,5 +46,78 @@
     margin-top: 10px;
     display: flex;
     justify-content: center;
+  }
+}
+
+@keyframes test2 {
+  0% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+    -o-transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg); /* IE 9 */
+    -moz-transform: rotate(30deg); /* Firefox */
+    -webkit-transform: rotate(30deg); /* Safari 和 Chrome */
+    -o-transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+    -o-transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg); /* IE 9 */
+    -moz-transform: rotate(-30deg); /* Firefox */
+    -webkit-transform: rotate(-30deg); /* Safari 和 Chrome */
+    -o-transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -moz-transform: rotate(0deg); /* Firefox */
+    -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+    -o-transform: rotate(0deg);
+  }
+}
+@keyframes clipplay {
+  0% {
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      9% 50%,
+      0% 80%,
+      20% 100%,
+      53% 93%,
+      80% 100%,
+      100% 80%,
+      89% 50%,
+      100% 20%,
+      80% 0%,
+      48% 13%
+    );
+  }
+
+  100% {
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      0 52%,
+      0% 80%,
+      20% 100%,
+      50% 100%,
+      80% 100%,
+      100% 80%,
+      100% 48%,
+      100% 20%,
+      80% 0%,
+      48% 0
+    );
   }
 }

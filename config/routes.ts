@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:20:54
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-28 16:13:45
+ * Last Modified: 2021-02-24 14:54:14
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -52,6 +52,22 @@ export default [
         path: '/test/auth',
         component: './componentsTest/auth',
       },
+      {
+        name: '音频',
+        path: '/test/vedio',
+        component: './componentsTest/vedio',
+      },
+      {
+        name: 'react',
+        path: '/test/react',
+        component: './componentsTest/react',
+      },
+      {
+        name: 'play',
+        path: '/test/play',
+        component: './componentsTest/play',
+      },
+
       // {
       //   component: '404',
       // },

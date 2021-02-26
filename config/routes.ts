@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:20:54
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-02-24 14:54:14
+ * Last Modified: 2021-02-26 10:47:51
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -66,6 +66,11 @@ export default [
         name: 'play',
         path: '/test/play',
         component: './componentsTest/play',
+      },
+      {
+        name: 'play1',
+        path: '/test/play1',
+        component: './componentsTest/play/XK.tsx',
       },
 
       // {

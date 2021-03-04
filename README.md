@@ -41,6 +41,9 @@ cli based on umi
     目录 - user
     拥有账号登录和手机验证登录，并加入了图片验证 
 
+### 菜单路由
+
+    在layouts里面设置全局布局，引入基础组件 Menu，实现对菜单路由的控制，在config/routes 对路由进行配置
 ### 权限
 
     登录缓存用户信息和权限，通过@/components/componentsTools/redux-y5进行redux的二次封装

@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:50:46
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-01-28 15:58:39
+ * Last Modified: 2021-03-04 10:58:22
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -14,8 +14,8 @@ import { Layout } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Menu } from '@/components/componentsTools';
 import routes from '../../config/routes';
+import HeadRight from './HeadRight';
 import 'antd/dist/antd.css';
-import router from 'umi/router';
 import styles from './index.less';
 import { TaoismProvider } from '@/components/componentsTools/redux-y5';
 const { Header, Content, Footer, Sider } = Layout;
@@ -34,11 +34,8 @@ const BasicLayout: React.FC = props => {
               marginRight: '20px',
               color: 'blue',
             }}
-            onClick={() => {
-              router.push('/login');
-            }}
           >
-            退出
+            <HeadRight />
           </div>
           <Menu datas={routes[1]?.routes} Menu mode="horizontal" />
         </Header>

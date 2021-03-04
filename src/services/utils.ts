@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 12:49:27
  * Author: yangwenwu
  * ------
- * Last Modified: 2020-12-16 13:05:48
+ * Last Modified: 2021-03-04 11:23:43
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -19,8 +19,8 @@ const { CancelToken } = axios;
 (window as any).cancelRequest = new Map();
 
 export default function request(options: any) {
-  let { data, url, method = 'get' } = options;
-  const cloneData = cloneDeep(data);
+  let { data, params, url, method = 'get' } = options;
+  const cloneData = cloneDeep(data || params);
 
   try {
     let domain = '';
@@ -32,7 +32,7 @@ export default function request(options: any) {
     }
 
     const match = parse(url);
-    url = compile(url)(data);
+    url = compile(url)(data || params);
 
     for (const item of match) {
       if (item instanceof Object && item.name in cloneData) {
@@ -46,6 +46,7 @@ export default function request(options: any) {
 
   options.url = url;
   options.params = cloneData;
+  options.method = method;
   options.cancelToken = new CancelToken(cancel => {
     (window as any).cancelRequest.set(Symbol(Date.now()), {
       pathname: window.location.pathname,

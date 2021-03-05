@@ -4,18 +4,23 @@
  * File Created: 2021-03-04 10:52:59
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-03-04 10:56:47
+ * Last Modified: 2021-03-05 13:53:37
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2021 - Present, Your Company
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import router from 'umi/router';
 import { useTaoism } from '@/components/componentsTools/redux-y5';
 interface NMGProps {}
 
 const NMG: React.FC<NMGProps> = props => {
-  let [userName] = useTaoism('userName', { light: true });
+  let [userName, setTaoism] = useTaoism('userName', { light: true });
+  useEffect(() => {
+    if (!userName) {
+      router.push('/login');
+    }
+  }, []);
   return (
     <div
       style={{
@@ -34,6 +39,7 @@ const NMG: React.FC<NMGProps> = props => {
           color: 'blue',
         }}
         onClick={() => {
+          setTaoism('userName', false);
           router.push('/login');
         }}
       >

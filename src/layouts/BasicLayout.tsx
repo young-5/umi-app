@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:50:46
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-03-04 15:01:43
+ * Last Modified: 2021-03-05 13:50:13
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -15,6 +15,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Menu } from '@/components/componentsTools';
 import routes from '../../config/routes';
 import HeadRight from './HeadRight';
+import { useTaoism } from '@/components/componentsTools/redux-y5';
 import 'antd/dist/antd.css';
 import styles from './index.less';
 import { TaoismProvider } from '@/components/componentsTools/redux-y5';
@@ -22,6 +23,7 @@ const { Header, Content, Footer, Sider } = Layout;
 const BasicLayout: React.FC = props => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const [layoutType, setLayoutType] = useState<string>('inline'); //horizontal   inline
+
   const toggle = () => {
     setCollapsed(!collapsed);
   };

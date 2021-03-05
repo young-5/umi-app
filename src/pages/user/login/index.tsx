@@ -25,7 +25,7 @@ const Login: React.FC<{}> = () => {
       ...value,
       sysIds: '1,3,4,6,10,15,16',
     }).then(res => {
-      if (res) {
+      if (res.code === 200) {
         message.success(res?.msg);
         message.success(value.name + ':登录成功 拥有 1 2 3 4 5 6 7 的权限');
 
@@ -35,6 +35,9 @@ const Login: React.FC<{}> = () => {
         setTaoism('permits', ['1', '2', '3', '4', '5', '6']);
         router.push('/');
         permits;
+      } else {
+        message.error(res?.msg);
+        ImgCodeModalRef.current.close();
       }
     });
   };

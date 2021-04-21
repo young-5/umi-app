@@ -5,6 +5,7 @@ import { FormContainer, ImgCode } from '@/components/componentsTools';
 import { ModalContainer } from 'oi-ui';
 import { BtnMaterial } from 'oi-ui';
 import { useTaoism } from '@/components/componentsTools/redux-y5';
+import { Encrypt } from '@/utils';
 import styles from './index.less';
 
 const Login: React.FC<{}> = () => {
@@ -23,6 +24,7 @@ const Login: React.FC<{}> = () => {
     setTaoism('userName', 'yang5登录成功');
     //获取权限
     setTaoism('permits', ['1', '2']);
+    localStorage.setItem('token', Encrypt.encrypt('123456789'));
     router.push('/');
     permits;
   };

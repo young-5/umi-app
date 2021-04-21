@@ -1,0 +1,51 @@
+/*
+ * File: style.less
+ * Description: 描述
+ * File Created: 2021-03-25 10:58:24
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2021-03-25 11:09:38
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2021 - Present, Your Company
+ */
+.donghua {
+  margin-top: 10px;
+  height: 50px;
+  width: 50px;
+  display: block;
+  border-radius: 40px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transition: width 2s, height 4s;
+  &:hover {
+    transform: translate(50px, 100px);
+    cursor: pointer;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes example {
+  0% {
+    background-color: red !important;
+  }
+  25% {
+    background-color: yellow !important;
+  }
+  50% {
+    background-color: blue !important;
+  }
+  75% {
+    background-color: green !important;
+  }
+  100% {
+    background-color: red !important;
+  }
+}

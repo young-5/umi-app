@@ -4,7 +4,7 @@
  * File Created: 2020-12-25 08:50:06
  * Author: yangwenwu
  * ------
- * Last Modified: 2020-12-25 08:59:57
+ * Last Modified: 2021-04-21 10:06:48
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -28,7 +28,7 @@ interface IGetprops {
   params?: any;
   url: string;
 }
-export const get = ({ params, url }: IGetprops) => {
+export const get = ({ params, url }: IGetprops): any => {
   return request({
     params,
     url,

@@ -1,0 +1,82 @@
+/*
+ * File: index.less
+ * Description: 描述
+ * File Created: 2021-03-25 10:19:04
+ * Author: yangwenwu
+ * ------
+ * Last Modified: 2021-03-25 10:58:11
+ * Modified By: yangwenwu at <1552153802@qq.com>
+ * ------
+ * Copyright 2021 - Present, Your Company
+ */
+:global {
+  .sanjiao {
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent red transparent;
+    //transparent 全透明
+  }
+  .gradient {
+    margin-top: 10px;
+    width: 200px;
+    background-image: linear-gradient(red, yellow, blue);
+  }
+  .dingwei {
+    margin-top: 10px;
+    div {
+      height: 50px;
+      width: 50px;
+      margin: 10px;
+      background-image: linear-gradient(red, yellow, blue);
+    }
+    .dingwei1 {
+      position: relative;
+      top: 30px;
+      z-index: 10;
+    }
+    .dingwei2 {
+      position: relative;
+      background: #000;
+    }
+    .dingwei3 {
+      position: relative;
+    }
+  }
+
+  .donghua {
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    display: block;
+    border-radius: 40px;
+    margin: auto;
+    text-align: center;
+    line-height: 50px;
+    background-color: red;
+    &:hover {
+      cursor: pointer;
+      animation-name: example;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+    }
+  }
+}
+@keyframes example {
+  0% {
+    background-color: red !important;
+  }
+  25% {
+    background-color: yellow !important;
+  }
+  50% {
+    background-color: blue !important;
+  }
+  75% {
+    background-color: green !important;
+  }
+  100% {
+    background-color: red !important;
+  }
+}

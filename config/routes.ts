@@ -4,7 +4,7 @@
  * File Created: 2020-12-16 13:20:54
  * Author: yangwenwu
  * ------
- * Last Modified: 2021-02-26 10:47:51
+ * Last Modified: 2021-04-21 10:02:06
  * Modified By: yangwenwu at <1552153802@qq.com>
  * ------
  * Copyright 2020 - Present, Your Company
@@ -53,6 +53,11 @@ export default [
         component: './componentsTest/auth',
       },
       {
+        name: '自定义hooks',
+        path: '/test/hooks',
+        component: './componentsTest/hooks',
+      },
+      {
         name: '音频',
         path: '/test/vedio',
         component: './componentsTest/vedio',
@@ -63,14 +68,9 @@ export default [
         component: './componentsTest/react',
       },
       {
-        name: 'play',
+        name: '酷炫生活',
         path: '/test/play',
         component: './componentsTest/play',
-      },
-      {
-        name: 'play1',
-        path: '/test/play1',
-        component: './componentsTest/play/XK.tsx',
       },
 
       // {
